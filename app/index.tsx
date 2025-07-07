@@ -25,14 +25,14 @@ export default function Index() {
                     <View
                     style={{
                         backgroundColor: "yellow",
-                        width:40,
-                        height: 100,
+                        paddingVertical:10,
+                        paddingHorizontal: 40,
                         borderRadius: 50,
                         justifyContent: "center",
                         alignItems: "center"
                     }}>
 
-                    <Text style={{fontSize: 14, color: "green", transform: [{ rotate: '90deg'}]}}>
+                    <Text style={{fontSize: 14, color: "green",}}>
                             105841110822
                     </Text>
                     </View>

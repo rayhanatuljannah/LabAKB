@@ -1,91 +1,95 @@
-import { ScrollView, StyleSheet, Text } from "react-native";
+import AntDesign from '@expo/vector-icons/AntDesign';
+import Entypo from '@expo/vector-icons/Entypo';
+import EvilIcons from '@expo/vector-icons/EvilIcons';
+import Feather from '@expo/vector-icons/Feather';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import Foundation from '@expo/vector-icons/Foundation';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import Octicons from '@expo/vector-icons/Octicons';
+import React from 'react';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
-// 10 nama sesuai permintaan kamu
-const namesWithStambuk = [
-  // 5 sebelum Ray (font statis)
-  "Sa'ban - 105841110322",
-  "Nur Fadillah Sari - 105841110422",
-  "Wa Nanda Sulystian - 105841110622",
-  "Muh Tegar Al Fikri - 105841110722",
-  "Rayhanatul Jannah - 105841110822",
-
-  // Ray (kamu) + 4 sesudah (font variabel)
-  "Hanna Maryam - 105841110922",
-  "Afifah Auliyah - 105841111022",
-  "Muh Fikri Maulana - 105841107622",
-  "Muhammad Hasraddin Hasnan - 105841107722",
-  "Muhammad Dzulfikar Hidayat - 105841107822"
-];
-
-// Font untuk 5 statis dan 5 variabel
-const staticFonts = [
-  "Combo",
-  "Estonia",
-  "IngridDarling",
-  "JacquesFrancoisShadow",
-  "SyneTactile",
-];
-
-const variableFonts = [
-  "Bitcount",       // Ray
-  "Manrope",
-  "Quicksand",
-  "SmoochSans",
-  "JosefinSlab",
-];
-
-export default function Page() {
+const IconScreen = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.sectionTitle}>5 nama sebelum (font statis):</Text>
-      {namesWithStambuk.slice(0, 5).map((item, idx) => (
-        <Text
-          key={idx}
-          style={[styles.name, { fontFamily: staticFonts[idx] }]}
-        >
-          {item}
-        </Text>
-      ))}
+      <Text style={styles.title}>10 Ikon Berbeda</Text>
 
-      <Text style={styles.sectionTitle}>5 nama setelah (font variabel):</Text>
-      {namesWithStambuk.slice(5).map((item, idx) => (
-        <Text
-          key={idx + 5}
-          style={[
-            styles.name,
-            { fontFamily: variableFonts[idx] },
-            item.includes("Ray") && styles.highlight,
-          ]}
-        >
-          {item}
-        </Text>
-      ))}
+      <View style={styles.iconRow}>
+        <Ionicons name="balloon-sharp" size={24} color="#4F8EF7" />
+        <Text style={styles.label}>Ionicons</Text>
+      </View>
+
+      <View style={styles.iconRow}>
+        <FontAwesome name="leaf" size={24} color="#f54242" />
+        <Text style={styles.label}>FontAwesome</Text>
+      </View>
+
+      <View style={styles.iconRow}>
+        <MaterialIcons name="cake" size={24} color="#f5427bff" />
+        <Text style={styles.label}>MaterialIcons</Text>
+      </View>
+
+      <View style={styles.iconRow}>
+        <Feather name="github" size={24} color="#f5a142" />
+        <Text style={styles.label}>Feather</Text>
+      </View>
+
+      <View style={styles.iconRow}>
+        <Entypo name="cloud" size={24} color="#42f554" />
+        <Text style={styles.label}>Entypo</Text>
+      </View>
+
+      <View style={styles.iconRow}>
+        <AntDesign name="gift" size={24} color="#f5429e" />
+        <Text style={styles.label}>AntDesign</Text>
+      </View>
+
+      <View style={styles.iconRow}>
+        <EvilIcons name="image" size={24} color="#8a42f5" />
+        <Text style={styles.label}>EvilIcons</Text>
+      </View>
+
+      <View style={styles.iconRow}>
+        <Foundation name="laptop" size={24} color="#f5e642" />
+        <Text style={styles.label}>Foundation</Text>
+      </View>
+
+      <View style={styles.iconRow}>
+        <MaterialCommunityIcons name="airballoon" size={24} color="#42f5d7" />
+        <Text style={styles.label}>MaterialCommunity</Text>
+      </View>
+
+      <View style={styles.iconRow}>
+        <Octicons name="feed-heart" size={24} color="#d742f5ff" />
+        <Text style={styles.label}>Octicons</Text>
+      </View>
     </ScrollView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 60,
-    paddingBottom: 100,
+    paddingVertical: 30,
     paddingHorizontal: 20,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    backgroundColor: '#fff',
   },
-  name: {
-    fontSize: 22,
-    marginVertical: 8,
-    textAlign: "center",
+  title: {
+    fontSize: 24,
+    marginBottom: 20,
+    fontWeight: 'bold',
   },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: "bold",
-    marginTop: 20,
-    marginBottom: 10,
-    color: "#555",
+  iconRow: {
+    alignItems: 'center',
+    marginVertical: 10,
   },
-  highlight: {
-    fontWeight: "bold",
-    color: "#1976D2", // Sorot warna biru untuk nama kamu (Ray)
+  label: {
+    marginTop: 5,
+    fontSize: 16,
+    color: '#333',
   },
 });
+
+export default IconScreen;

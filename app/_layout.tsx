@@ -23,7 +23,7 @@ export default function RootLayout() {
     "JosefinSlab": require("../assets/fonts/JosefinSlab-Italic-VariableFont_wght.ttf"),
   });
 
-  useEffect(() => {
+  useEffect(() => { 
     if (fontsLoaded) SplashScreen.hideAsync();
   }, [fontsLoaded]);
 
